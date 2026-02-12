@@ -10,10 +10,14 @@ const CartItem = () => {
   const dispatch = useDispatch();
   const { items, totalQuantity } = useSelector(state => state.cart);
 
+  // Total amount for the entire cart
   const totalAmount = items.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
+
+  // Dedicated function to calculate total for a single item
+  const calculateItemTotal = (item) => item.price * item.quantity;
 
   if (items.length === 0) {
     return (
@@ -46,7 +50,7 @@ const CartItem = () => {
           <div style={{ flex: 1 }}>
             <h4>{item.name}</h4>
             <p>Unit Price: ${item.price}</p>
-            <p>Total: ${item.price * item.quantity}</p>
+            <p>Total: ${calculateItemTotal(item)}</p>
           </div>
 
           <div>

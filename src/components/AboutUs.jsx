@@ -1,34 +1,33 @@
 import { Link } from "react-router-dom";
+import backgroundImage from "../assets/images/background.jpg";
+import './AboutUs.css';
 
 const AboutUs = () => {
   return (
-    <div className="landing">
-      {/* Navbar is already handled globally */}
-
-      <div className="landing-body">
-        {/* Left section 2/3 */}
-        <div className="landing-left">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Donec euismod, nisl eget consectetur sagittis, nisl nunc 
-            consectetur nisi, euismod aliquam nisl nunc euismod nisi.
-            Pellentesque habitant morbi tristique senectus et netus et 
-            malesuada fames ac turpis egestas.
-          </p>
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
-            quae ab illo inventore veritatis et quasi architecto beatae vitae.
-          </p>
-        </div>
-
-        {/* Right section 1/3 */}
-        <div className="landing-right">
-          <h1>Paradise Nursery</h1>
-          <Link to="/plants">
-            <button>Get Started</button>
-          </Link>
-        </div>
+    <div
+      className="about-us-container"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="about-us-content">
+        <h1 className="about-us-header">Welcome to Paradise Nursery</h1>
+        <p>
+          Paradise Nursery has been nurturing young minds for over 15 years, 
+          providing a safe, creative, and stimulating environment for children 
+          to learn and grow.
+        </p>
+        <p>
+          Our mission is to foster holistic development through play, learning, 
+          and exploration. We aim to inspire curiosity, confidence, and a love 
+          for nature in every child.
+        </p>
+        <p>
+          We offer a variety of programs, including early childhood education, 
+          creative workshops, and outdoor activities designed to encourage 
+          imagination and skill development.
+        </p>
+        <Link to="/plants">
+          <button className="get-started-button">Get Started</button>
+        </Link>
       </div>
     </div>
   );
